@@ -1,3 +1,4 @@
 # Machine Learning Models
-Learning machine learning models and its implementations 
+Learning machine learning models and its implementations
+just for fun  
 
