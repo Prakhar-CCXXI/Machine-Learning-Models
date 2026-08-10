@@ -22,12 +22,12 @@ def index():
             stock = 'POWERGRID.NS'  # Default stock if none is entered
         
         # Define the start and end dates for stock data
-        start = dt.datetime(2000, 1, 1)
-        end = dt.datetime(2024, 10, 1)
-        
-        # Download stock data
-        df = yf.download(stock, start=start, end=end)
-        
+         start = dt.datetime(2000, 1, 1)
+         end = dt.datetime(2024, 10, 1)
+         
+         # Download stock data
+         df = yf.download(stock, start=start, end=end)
+         
         # Descriptive Data
         data_desc = df.describe()
         
@@ -47,7 +47,7 @@ def index():
         
         # Prepare data for prediction
         past_100_days = data_training.tail(100)
-        final_df = pd.concat([past_100_days, data_testing], ignore_index=True)
+        final_df = past_100_days.append(data_testing, ignore_index=True)
         input_data = scaler.fit_transform(final_df)
         
         x_test, y_test = [], []
